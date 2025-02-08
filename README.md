@@ -11,7 +11,7 @@ This is a writeup of a practical project that involves the following main concep
 ## Create and Configure AWS Lightsail Instance
 - In AWS, create a free tier account and complete the identity verification and billing information
 - Log into the AWS Lightsail Console and click on `Create Instance` button <br>
-  ![image](https://github.com/user-attachments/assets/56523b42-d3a5-4962-b622-a35f80c9c4a6)
+  ![lightsail](https://github.com/user-attachments/assets/18dd304e-9a5d-4def-a129-9ce9d4b3d885)
 
 - Choose the preferred instance location, platform, and blueprint. Since we will be deploying a LAMP stack web app, choose `Apps + OS` for the blueprint and select `LAMP (PHP 8)`
   ![image](https://github.com/user-attachments/assets/57158038-66c4-43e0-b747-0f65c6bf8527)
