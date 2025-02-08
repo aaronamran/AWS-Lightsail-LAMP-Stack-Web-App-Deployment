@@ -116,6 +116,20 @@ This is a writeup of a practical project that involves the following main concep
 
 
 ## Allocate a Static IP Address
+- The default public IP for your LAMP instance changes if you stop and start the instance. A static IP address, attached to an instance, stays the same even if you stop and start your instance
+- To allocate a static IP address, open the LAMP instance
+  ![image](https://github.com/user-attachments/assets/78f62ff3-db16-4d6f-b72e-83a55e22b7f0)
+
+- Choose the Networking tab and then Attach static IP
+  ![image](https://github.com/user-attachments/assets/13d83d38-8440-4272-ba40-592735cd64f5)
+
+- Name the static IP and click <b>Create and attach<b>
+  ![image](https://github.com/user-attachments/assets/3d90adf6-c6ef-40a3-97e6-dadcd09fe736)
+
+- 
+
+
+  
 
 
 
