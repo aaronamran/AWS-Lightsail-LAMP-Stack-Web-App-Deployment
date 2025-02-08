@@ -225,11 +225,50 @@ This is a writeup of a practical project that involves the following main concep
   Note that if your hostname is registered without `www`, enabling www redirections to the hostname will cause the following error and failure of SSL certificate process <br>
   ![image](https://github.com/user-attachments/assets/824ef41b-ce7a-4691-9c31-f4024222e6a3)
 
+- Navigate to `/opt/bitnami/apache2/conf/vhosts` directory and create a `todolist-vhost.conf` file. Paste the following configuration:
+  ```
+  # HTTP VirtualHost: Redirect all requests to HTTPS
+  <VirtualHost *:80>
+      DocumentRoot "/opt/bitnami/apache2/htdocs"
+      ServerName todolist.zapto.org
+      ServerAlias www.todolist.zapto.org
   
+      # BEGIN: Enable HTTP to HTTPS redirection
+      RewriteEngine On
+      RewriteRule ^/(.*) https://todolist.zapto.org/$1 [R,L]
+      # END: Enable HTTP to HTTPS redirection
+  </VirtualHost>
+  
+  # HTTPS VirtualHost: Serve the site securely and redirect www to non-www
+  <VirtualHost _default_:443>
+      DocumentRoot "/opt/bitnami/apache2/htdocs"
+      ServerName todolist.zapto.org
+      ServerAlias www.todolist.zapto.org
+  
+      # BEGIN: Enable www to non-www redirection
+      RewriteEngine On
+      RewriteCond %{HTTP_HOST} !^todolist\.zapto\.org$ [NC]
+      RewriteRule ^(.*)$ https://todolist.zapto.org$1 [R=permanent,L]
+      # END: Enable www to non-www redirection
+  
+      <Directory "/opt/bitnami/apache2/htdocs">
+          Options -Indexes +FollowSymLinks -MultiViews
+          AllowOverride All
+          Require all granted
+      </Directory>
+  
+      SSLEngine on
+      SSLCertificateFile "/opt/bitnami/apache2/conf/todolist.zapto.org.cert"
+      SSLCertificateKeyFile "/opt/bitnami/apache2/conf/todolist.zapto.org.key"
+  </VirtualHost>
+  ```
 
+- Then navigate to `/opt/bitnami/apache2/conf/bitnami/bitnami.conf` and add an include directive at the bottom
+  ```
+  # Custom Virtual Hosts
+  Include "/opt/bitnami/apache2/conf/vhosts/todolist-vhost.conf"
+  ```
 
-
-
-
+  
 
 ## Test Deployed Web Application
