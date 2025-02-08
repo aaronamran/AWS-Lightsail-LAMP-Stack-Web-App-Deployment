@@ -139,12 +139,17 @@ This is a writeup of a practical project that involves the following main concep
   cat bitnami_application_password
   ```
   If you're in a directory other than the user home directory, then enter `cat $HOME/bitnami_application_password` <br>
-  ![image](https://github.com/user-attachments/assets/b217dff2-1e31-4308-8836-b251832749d4)
+  ![image](https://github.com/user-attachments/assets/a0a08a4f-b884-4884-8943-7bf20d93c6f0)
+
 
 
 ## Secure Site with SSL
 - When we visit the public IP address, we can see that it is not secure. This means that it runs on port 80 (HTTP) and should be running on port 443 (HTTPS)
-  ![image](https://github.com/user-attachments/assets/026c840c-ccf9-4f73-82e2-8046d9604859)
+  ![image](https://github.com/user-attachments/assets/026c840c-ccf9-4f73-82e2-8046d9604859) <br>
+  ![image](https://github.com/user-attachments/assets/d9d94da6-9d8a-4196-8c52-20632ea4c1b1)
+
+- 
+
 
 
 
