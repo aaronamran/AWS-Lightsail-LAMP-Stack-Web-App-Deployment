@@ -77,7 +77,7 @@ This is a writeup of a practical project that involves the following main concep
     # -----------------------------------------
     # If you want to deploy your app using Git, uncomment the next line
     # and update <branch> and <repository_url> as needed.
-    # git clone -b main https://github.com/aaronamran/sample-php-crud .
+    git clone -b main https://github.com/aaronamran/sample-php-crud .
     
     # ---------------------------------------------------
     # Set Write Permissions on the Application Settings File
