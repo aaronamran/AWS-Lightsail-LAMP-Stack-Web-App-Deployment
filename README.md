@@ -112,19 +112,20 @@ This is a writeup of a practical project that involves the following main concep
   ![image](https://github.com/user-attachments/assets/66106d43-4e77-476a-90a3-41699688d33b)
 
 - After clicking on `Create instance` button, the instance will start, and the following screen outcome can be seen
-  ![image](https://github.com/user-attachments/assets/77a84fbc-3533-4ae8-9c1e-5824536d441b)
+  ![image](https://github.com/user-attachments/assets/9dedf5ac-558f-4f59-9807-6ccba43f9f81)
+
 
 
 ## Allocate a Static IP Address
 - The default public IP for your LAMP instance changes if you stop and start the instance. A static IP address, attached to an instance, stays the same even if you stop and start your instance
-- To allocate a static IP address, open the LAMP instance
-  ![image](https://github.com/user-attachments/assets/78f62ff3-db16-4d6f-b72e-83a55e22b7f0)
+- To allocate a static IP address, open the LAMP instance. Choose the `Networking` tab and then `Attach static IP`
+  ![image](https://github.com/user-attachments/assets/1ef9b08a-b1bb-4a9f-8e28-f54839036094) <br>
+  ![image](https://github.com/user-attachments/assets/fb656ae6-86db-4e4d-ae93-0b9b70cc6e08)
 
-- Choose the `Networking` tab and then `Attach static IP`
-  ![image](https://github.com/user-attachments/assets/13d83d38-8440-4272-ba40-592735cd64f5)
 
 - Name the static IP and click `Create and attach`
-  ![image](https://github.com/user-attachments/assets/3d90adf6-c6ef-40a3-97e6-dadcd09fe736)
+  ![image](https://github.com/user-attachments/assets/99a78e66-5284-4bbb-b5c2-5804d047b021)
+
 
 - 
 
@@ -132,7 +133,7 @@ This is a writeup of a practical project that involves the following main concep
 ## Connect to Lightsail Instance via SSH
 - The default password to sign in to your database in LAMP is stored on your instance. Retrieve it by connecting to your instance using the browser-based SSH terminal in the Lightsail console and running a special command
 
-- On the Instances section of the Lightsail home page, choose the SSH quick-connect (terminal) icon for your LAMP instance
+- On the Instances section of the Lightsail home page, choose the SSH quick-connect (terminal) icon for your LAMP instance <br>
   ![image](https://github.com/user-attachments/assets/92bd16bc-3924-4747-b6cc-b5b415c0d61b)
 
 - After the browser-based SSH client window opens, enter the following command to retrieve the default application password:
