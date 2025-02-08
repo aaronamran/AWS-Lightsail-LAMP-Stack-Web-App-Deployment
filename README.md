@@ -204,10 +204,30 @@ This is a writeup of a practical project that involves the following main concep
 
 
 ## Secure Site with SSL
-- However, when we visit the web app, we can see that it is not secure. This means that it runs on port 80 (HTTP), and should instead be running on port 443 (HTTPS)
+- However, when we visit the web app, we can see that it is not secure. This means that it runs on port 80 (HTTP), and should instead be running on port 443 (HTTPS) <br>
   ![image](https://github.com/user-attachments/assets/8e3c9592-4c12-4d82-a79b-ed7939609c73)
 
-- 
+- Enter the browser-based SSH in Lightsail. Navigate to `/opt/bitnami`
+  ![image](https://github.com/user-attachments/assets/4fdf606a-2a8c-400f-bc55-d8217b5325db)
+
+- Run the BNcert Tool
+  ```
+  sudo ./bncert-tool
+  ```
+  It will inform that an updated version is available for download. Then run
+  ```
+  sudo /opt/bitnami/bncert-tool
+  ```
+  ![image](https://github.com/user-attachments/assets/b6919a2f-0948-40fb-a173-e471856c592b)
+
+- A series of prompts about redirections and other changes will appear
+  ![image](https://github.com/user-attachments/assets/75aa4815-3f73-49c8-8361-bd0efbc883ae) <br>
+  Note that if your hostname is registered without `www`, enabling www redirections to the hostname will cause the following error and failure of SSL certificate process <br>
+  ![image](https://github.com/user-attachments/assets/824ef41b-ce7a-4691-9c31-f4024222e6a3)
+
+  
+
+
 
 
 
