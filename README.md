@@ -3,11 +3,9 @@ This is a writeup of a practical project that involves the following main concep
 1. [Create and Configure AWS Lightsail Instance]()
 2. [Allocate a Static IP Address]()
 3. [Connect to Lightsail Instance via SSH]()
-4. [Update Server's Packages]()
-5. [Deploy Web Application]()
-6. [Configure Apache Virtual Host for a Custom Domain]()
-7. [Secure Site with SSL]()
-8. [Test Deployed Web Application]()
+4. [Configure Apache Virtual Host for a Custom Domain]()
+5. [Secure Site with SSL]()
+6. [Test Deployed Web Application]()
 
 
 ## Create and Configure AWS Lightsail Instance
@@ -107,23 +105,21 @@ This is a writeup of a practical project that involves the following main concep
     # ------------------------------
     /opt/bitnami/ctlscript.sh restart apache
     ```
+- Since this project is for learning purposes, we will go with the instance plan which has the lowest cost and is included in the free tier option
+  ![image](https://github.com/user-attachments/assets/5d492538-1a8d-4313-b761-eb866d590989)
 
+- Names and tags can be customised for the configured instance
+  ![image](https://github.com/user-attachments/assets/66106d43-4e77-476a-90a3-41699688d33b)
 
-  
+- After clicking on `Create instance` button, the instance will start, and the following screen outcome can be seen
+  ![image](https://github.com/user-attachments/assets/77a84fbc-3533-4ae8-9c1e-5824536d441b)
+
 
 ## Allocate a Static IP Address
 
 
 
 ## Connect to Lightsail Instance via SSH
-
-
-
-## Update Server's Packages
-
-
-
-## Deploy Web Application
 
 
 
