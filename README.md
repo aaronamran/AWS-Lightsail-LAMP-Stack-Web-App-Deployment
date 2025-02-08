@@ -127,14 +127,12 @@ This is a writeup of a practical project that involves the following main concep
   ![image](https://github.com/user-attachments/assets/99a78e66-5284-4bbb-b5c2-5804d047b021)
 
 
-- 
-
 
 ## Connect to Lightsail Instance via SSH
 - The default password to sign in to your database in LAMP is stored on your instance. Retrieve it by connecting to your instance using the browser-based SSH terminal in the Lightsail console and running a special command
 
 - On the Instances section of the Lightsail home page, choose the SSH quick-connect (terminal) icon for your LAMP instance <br>
-  ![image](https://github.com/user-attachments/assets/92bd16bc-3924-4747-b6cc-b5b415c0d61b)
+  ![image](https://github.com/user-attachments/assets/be90e9c6-7792-4b83-852e-473dc20e9e66)
 
 - After the browser-based SSH client window opens, enter the following command to retrieve the default application password:
   ```
@@ -143,14 +141,10 @@ This is a writeup of a practical project that involves the following main concep
   If you're in a directory other than the user home directory, then enter `cat $HOME/bitnami_application_password` <br>
   ![image](https://github.com/user-attachments/assets/b217dff2-1e31-4308-8836-b251832749d4)
 
-- 
-
-
-## Configure Apache Virtual Host for a Custom Domain
-
-
 
 ## Secure Site with SSL
+- When we visit the public IP address, we can see that it is not secure. This means that it runs on port 80 (HTTP) and should be running on port 443 (HTTPS)
+  ![image](https://github.com/user-attachments/assets/026c840c-ccf9-4f73-82e2-8046d9604859)
 
 
 
