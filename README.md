@@ -142,11 +142,70 @@ This is a writeup of a practical project that involves the following main concep
   ![image](https://github.com/user-attachments/assets/a0a08a4f-b884-4884-8943-7bf20d93c6f0)
 
 
+## Configure Apache Virtual Host for a Custom Domain
+- When we visit the public IP address, we can see that it has no hostname, only the IP address itself in the browser's URL bar
+  ![image](https://github.com/user-attachments/assets/026c840c-ccf9-4f73-82e2-8046d9604859)
+
+- For this project, we will go with a free hostname uisng [No-IP](https://my.noip.com/)
+- After signing up for No-IP, navigate to the account dashboard and add a host
+  ![image](https://github.com/user-attachments/assets/fc88d47b-c9be-4a75-ad15-f94863fd2089)
+
+- Give a domain name for the web app, and enter the deployed LAMP web app public IP address
+  ![image](https://github.com/user-attachments/assets/d172e420-7878-4fab-90a2-619471df2610)
+
+- After saving the settings, create a DDNS key for the hostname. For reference, visit this [link](https://www.noip.com/support/knowledgebase/how-to-setup-and-use-a-ddns-key)
+  ![image](https://github.com/user-attachments/assets/cb4719ec-f4e7-4924-b9bd-4be6ba2c3316)
+
+- Clicking continue will save the settings and activate the web app's hostname. Now when we visit the web app, we can see the new name appearing
+  ![image](https://github.com/user-attachments/assets/ec2f79a1-f3fc-4e76-8c00-041a24f36c17)
+
+- Even though the domain (todolist.zapto.org) is pointing to the Lightsail instance’s static IP, Apache doesn't necessarily need a custom virtual host to serve the site. It simply falls back to the default virtual host if it doesn't find one that explicitly matches the domain in the request
+- Connect to Lightsail's browser-based SSH. Then navigate to the Apache Configuration Diretory
+  ```
+  cd /opt/bitnami/apache2/conf/vhosts
+  ```
+  If the `vhosts` directory does not exist, it can be created
+  ```
+  sudo mkdir -p /opt/bitnami/apache2/conf/vhosts
+  ```
+- Create a file named `todolist-vhost.conf`
+  ```
+  sudo nano /opt/bitnami/apache2/conf/vhosts/todolist-vhost.conf
+  ```
+- Insert the following configuration
+  ```
+  <VirtualHost *:80>
+    ServerName todolist.zapto.org
+    ServerAlias www.todolist.zapto.org
+    DocumentRoot "/opt/bitnami/apache2/htdocs"
+
+    <Directory "/opt/bitnami/apache2/htdocs">
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog "/opt/bitnami/apache2/logs/todolist_error.log"
+    CustomLog "/opt/bitnami/apache2/logs/todolist_access.log" combined
+  </VirtualHost>
+  ```
+- Depending on Bitnami configuration, it is good to ensure that custom vhost files are included in the main configuration. Open `/opt/bitnami/apache2/conf/bitnami/bitnami-apps-vhosts.conf`
+  ```
+  sudo nano /opt/bitnami/apache2/conf/bitnami/bitnami-apps-vhosts.conf
+  ```
+  Add the following line if it's not already there
+  ```
+  Include "/opt/bitnami/apache2/conf/vhosts/todolist-vhost.conf"
+  ```
+  To apply changes, restart Apache with the Bitnami control script
+  ```
+  sudo /opt/bitnami/ctlscript.sh restart apache
+  ```
+
 
 ## Secure Site with SSL
-- When we visit the public IP address, we can see that it is not secure. This means that it runs on port 80 (HTTP) and should be running on port 443 (HTTPS)
-  ![image](https://github.com/user-attachments/assets/026c840c-ccf9-4f73-82e2-8046d9604859) <br>
-  ![image](https://github.com/user-attachments/assets/d9d94da6-9d8a-4196-8c52-20632ea4c1b1)
+- However, when we visit the web app, we can see that it is not secure. This means that it runs on port 80 (HTTP), and should instead be running on port 443 (HTTPS)
+  ![image](https://github.com/user-attachments/assets/8e3c9592-4c12-4d82-a79b-ed7939609c73)
 
 - 
 
