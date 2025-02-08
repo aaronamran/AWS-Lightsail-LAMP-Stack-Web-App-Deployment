@@ -120,21 +120,29 @@ This is a writeup of a practical project that involves the following main concep
 - To allocate a static IP address, open the LAMP instance
   ![image](https://github.com/user-attachments/assets/78f62ff3-db16-4d6f-b72e-83a55e22b7f0)
 
-- Choose the Networking tab and then Attach static IP
+- Choose the `Networking` tab and then `Attach static IP`
   ![image](https://github.com/user-attachments/assets/13d83d38-8440-4272-ba40-592735cd64f5)
 
-- Name the static IP and click <b>Create and attach<b>
+- Name the static IP and click `Create and attach`
   ![image](https://github.com/user-attachments/assets/3d90adf6-c6ef-40a3-97e6-dadcd09fe736)
 
 - 
 
 
-  
-
-
-
 ## Connect to Lightsail Instance via SSH
+- The default password to sign in to your database in LAMP is stored on your instance. Retrieve it by connecting to your instance using the browser-based SSH terminal in the Lightsail console and running a special command
 
+- On the Instances section of the Lightsail home page, choose the SSH quick-connect (terminal) icon for your LAMP instance
+  ![image](https://github.com/user-attachments/assets/92bd16bc-3924-4747-b6cc-b5b415c0d61b)
+
+- After the browser-based SSH client window opens, enter the following command to retrieve the default application password:
+  ```
+  cat bitnami_application_password
+  ```
+  If you're in a directory other than the user home directory, then enter `cat $HOME/bitnami_application_password` <br>
+  ![image](https://github.com/user-attachments/assets/b217dff2-1e31-4308-8836-b251832749d4)
+
+- 
 
 
 ## Configure Apache Virtual Host for a Custom Domain
