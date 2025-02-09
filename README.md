@@ -160,47 +160,6 @@ This is a writeup of a practical project that involves the following main concep
   ![image](https://github.com/user-attachments/assets/ec2f79a1-f3fc-4e76-8c00-041a24f36c17)
 
 - Even though the domain (todolist.zapto.org) is pointing to the Lightsail instance’s static IP, Apache doesn't necessarily need a custom virtual host to serve the site. It simply falls back to the default virtual host if it doesn't find one that explicitly matches the domain in the request
-- Connect to Lightsail's browser-based SSH. Then navigate to the Apache Configuration Diretory
-  ```
-  cd /opt/bitnami/apache2/conf/vhosts
-  ```
-  If the `vhosts` directory does not exist, it can be created
-  ```
-  sudo mkdir -p /opt/bitnami/apache2/conf/vhosts
-  ```
-- Create a file named `todolist-vhost.conf`
-  ```
-  sudo nano /opt/bitnami/apache2/conf/vhosts/todolist-vhost.conf
-  ```
-- Insert the following configuration
-  ```
-  <VirtualHost *:80>
-    ServerName todolist.zapto.org
-    ServerAlias www.todolist.zapto.org
-    DocumentRoot "/opt/bitnami/apache2/htdocs"
-
-    <Directory "/opt/bitnami/apache2/htdocs">
-        Options Indexes FollowSymLinks
-        AllowOverride All
-        Require all granted
-    </Directory>
-
-    ErrorLog "/opt/bitnami/apache2/logs/todolist_error.log"
-    CustomLog "/opt/bitnami/apache2/logs/todolist_access.log" combined
-  </VirtualHost>
-  ```
-- Depending on Bitnami configuration, it is good to ensure that custom vhost files are included in the main configuration. Open `/opt/bitnami/apache2/conf/bitnami/bitnami-apps-vhosts.conf`
-  ```
-  sudo nano /opt/bitnami/apache2/conf/bitnami/bitnami-apps-vhosts.conf
-  ```
-  Add the following line if it's not already there
-  ```
-  Include "/opt/bitnami/apache2/conf/vhosts/todolist-vhost.conf"
-  ```
-  To apply changes, restart Apache with the Bitnami control script
-  ```
-  sudo /opt/bitnami/ctlscript.sh restart apache
-  ```
 
 
 ## Secure Site with SSL
@@ -225,50 +184,10 @@ This is a writeup of a practical project that involves the following main concep
   Note that if your hostname is registered without `www`, enabling www redirections to the hostname will cause the following error and failure of SSL certificate process <br>
   ![image](https://github.com/user-attachments/assets/824ef41b-ce7a-4691-9c31-f4024222e6a3)
 
-- Navigate to `/opt/bitnami/apache2/conf/vhosts` directory and create a `todolist-vhost.conf` file. Paste the following configuration:
-  ```
-  # HTTP VirtualHost: Redirect all requests to HTTPS
-  <VirtualHost *:80>
-      DocumentRoot "/opt/bitnami/apache2/htdocs"
-      ServerName todolist.zapto.org
-      ServerAlias www.todolist.zapto.org
-  
-      # BEGIN: Enable HTTP to HTTPS redirection
-      RewriteEngine On
-      RewriteRule ^/(.*) https://todolist.zapto.org/$1 [R,L]
-      # END: Enable HTTP to HTTPS redirection
-  </VirtualHost>
-  
-  # HTTPS VirtualHost: Serve the site securely and redirect www to non-www
-  <VirtualHost _default_:443>
-      DocumentRoot "/opt/bitnami/apache2/htdocs"
-      ServerName todolist.zapto.org
-      ServerAlias www.todolist.zapto.org
-  
-      # BEGIN: Enable www to non-www redirection
-      RewriteEngine On
-      RewriteCond %{HTTP_HOST} !^todolist\.zapto\.org$ [NC]
-      RewriteRule ^(.*)$ https://todolist.zapto.org$1 [R=permanent,L]
-      # END: Enable www to non-www redirection
-  
-      <Directory "/opt/bitnami/apache2/htdocs">
-          Options -Indexes +FollowSymLinks -MultiViews
-          AllowOverride All
-          Require all granted
-      </Directory>
-  
-      SSLEngine on
-      SSLCertificateFile "/opt/bitnami/apache2/conf/todolist.zapto.org.cert"
-      SSLCertificateKeyFile "/opt/bitnami/apache2/conf/todolist.zapto.org.key"
-  </VirtualHost>
-  ```
-
-- Then navigate to `/opt/bitnami/apache2/conf/bitnami/bitnami.conf` and add an include directive at the bottom
-  ```
-  # Custom Virtual Hosts
-  Include "/opt/bitnami/apache2/conf/vhosts/todolist-vhost.conf"
-  ```
 
   
 
 ## Test Deployed Web Application
+- Now the LAMP stack web app is up with SSL certificate
+  ![image](https://github.com/user-attachments/assets/fa885040-d111-4a77-9e26-49cbac8a113d)
+
