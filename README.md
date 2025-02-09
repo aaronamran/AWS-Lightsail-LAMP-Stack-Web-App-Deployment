@@ -166,14 +166,7 @@ This is a writeup of a practical project that involves deploying a PHP web appli
 - However, when we visit the web app, we can see that it is not secure. This means that it runs on port 80 (HTTP), and should instead be running on port 443 (HTTPS) <br>
   ![image](https://github.com/user-attachments/assets/8e3c9592-4c12-4d82-a79b-ed7939609c73)
 
-- Enter the browser-based SSH in Lightsail. Navigate to `/opt/bitnami`
-  ![image](https://github.com/user-attachments/assets/4fdf606a-2a8c-400f-bc55-d8217b5325db)
-
-- Run the BNcert Tool
-  ```
-  sudo ./bncert-tool
-  ```
-  It will inform that an updated version is available for download. Then run
+- Enter the browser-based SSH in Lightsail. Run the BNcert Tool. If there are any updates for the tool, follow the instructions
   ```
   sudo /opt/bitnami/bncert-tool
   ```
