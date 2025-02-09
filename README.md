@@ -182,12 +182,30 @@ This is a writeup of a practical project that involves the following main concep
 
 - A series of prompts about redirections and other changes will appear
   ![image](https://github.com/user-attachments/assets/3f36b37c-72c4-4a9d-a768-b6435f20ac1c) <br>
-  Note that if your hostname is registered without `www`, enabling www redirections to the hostname will cause the following error and failure of SSL certificate process <br>
+  Note that if your hostname is registered without `www`, enabling www redirections to the hostname will cause the following error and failure of SSL certificate process. Since our registered hostname in No-IP is only `todolist.zapto.org`, registering `www.todolist.zapto.org` would also result in error as it does not exist <br>
   ![image](https://github.com/user-attachments/assets/c5fbb6ea-f935-4743-8f5f-31a2a37e4200)
 
   
 
 ## Test Deployed Web Application
 - Now the LAMP stack web app is successfully deployed with SSL certificate
-  ![image](https://github.com/user-attachments/assets/fa885040-d111-4a77-9e26-49cbac8a113d)
+  ![image](https://github.com/user-attachments/assets/fa885040-d111-4a77-9e26-49cbac8a113d) <br>
+  ![image](https://github.com/user-attachments/assets/16bf4833-232f-4213-8573-feefd4a729e9)
+
+- Add a simple task for testing purposes
+  ![image](https://github.com/user-attachments/assets/80bdbcdf-0e47-424c-a7a2-4c90e6443a12)
+
+- When returning to the homepage, the added task is seen
+  ![image](https://github.com/user-attachments/assets/b17c4b67-231a-43a0-a85b-2ecedca99af6)
+
+- It is possible to edit the added task
+  ![image](https://github.com/user-attachments/assets/e1801d4c-be64-454d-a293-bdbd90b3d021)
+
+- Deleting the task is also part of the web application's functionality
+  ![image](https://github.com/user-attachments/assets/b16edd60-7048-4f0b-94e8-8d3d1d983336)
+
+
+
+- To prevent unwanted billing charges, return to Lightsail instances dashboard and stop and delete the specified instance
+  ![image](https://github.com/user-attachments/assets/47ff587b-96d6-4c6c-857a-a2c07e8855fc)
 
