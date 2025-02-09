@@ -46,7 +46,7 @@ This is a writeup of a practical project that involves the following main concep
   - Ensures the configuration file is writeable
   - Uses sed to read the local database password from a file on the disk and insert it into the configuration file
   - Runs an SQL script to set up the application’s database
-  <br>
+  
   ![image](https://github.com/user-attachments/assets/ea835aa4-dee4-4303-a624-7a562f6c4b55) <br>
 
 - However, for the sake of practical learning, we will be using our own custom PHP Web Application. That means we can modify the launch script as the following:
