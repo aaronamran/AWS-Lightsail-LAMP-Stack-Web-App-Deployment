@@ -188,6 +188,6 @@ This is a writeup of a practical project that involves the following main concep
   
 
 ## Test Deployed Web Application
-- Now the LAMP stack web app is up with SSL certificate
+- Now the LAMP stack web app is successfully deployed with SSL certificate
   ![image](https://github.com/user-attachments/assets/fa885040-d111-4a77-9e26-49cbac8a113d)
 
