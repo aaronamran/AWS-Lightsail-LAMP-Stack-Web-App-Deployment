@@ -1,11 +1,11 @@
 # AWS Lightsail LAMP Stack Web Application Deployment
 This is a writeup of a practical project that involves the following main concepts in order:
-1. [Create and Configure AWS Lightsail Instance]()
-2. [Allocate a Static IP Address]()
-3. [Connect to Lightsail Instance via SSH]()
-4. [Configure Apache Virtual Host for a Custom Domain]()
-5. [Secure Site with SSL]()
-6. [Test Deployed Web Application]()
+1. [Create and Configure AWS Lightsail Instance](https://github.com/aaronamran/AWS-Lightsail-LAMP-Stack-Web-App-Deployment/tree/main#create-and-configure-aws-lightsail-instance)
+2. [Allocate a Static IP Address](https://github.com/aaronamran/AWS-Lightsail-LAMP-Stack-Web-App-Deployment/tree/main#allocate-a-static-ip-address)
+3. [Connect to Lightsail Instance via SSH](https://github.com/aaronamran/AWS-Lightsail-LAMP-Stack-Web-App-Deployment/tree/main#connect-to-lightsail-instance-via-ssh)
+4. [Configure Apache Virtual Host for a Custom Domain](https://github.com/aaronamran/AWS-Lightsail-LAMP-Stack-Web-App-Deployment/tree/main#configure-apache-virtual-host-for-a-custom-domain)
+5. [Secure Site with SSL](https://github.com/aaronamran/AWS-Lightsail-LAMP-Stack-Web-App-Deployment/tree/main#secure-site-with-ssl)
+6. [Test Deployed Web Application](https://github.com/aaronamran/AWS-Lightsail-LAMP-Stack-Web-App-Deployment/tree/main#test-deployed-web-application)
 
 
 ## Create and Configure AWS Lightsail Instance
@@ -177,13 +177,13 @@ This is a writeup of a practical project that involves the following main concep
   ```
   sudo /opt/bitnami/bncert-tool
   ```
-  ![image](https://github.com/user-attachments/assets/b6919a2f-0948-40fb-a173-e471856c592b)
+  ![image](https://github.com/user-attachments/assets/149874d2-d6e2-4cd7-99ac-ead6275e58e2)
+
 
 - A series of prompts about redirections and other changes will appear
-  ![image](https://github.com/user-attachments/assets/75aa4815-3f73-49c8-8361-bd0efbc883ae) <br>
+  ![image](https://github.com/user-attachments/assets/3f36b37c-72c4-4a9d-a768-b6435f20ac1c) <br>
   Note that if your hostname is registered without `www`, enabling www redirections to the hostname will cause the following error and failure of SSL certificate process <br>
-  ![image](https://github.com/user-attachments/assets/824ef41b-ce7a-4691-9c31-f4024222e6a3)
-
+  ![image](https://github.com/user-attachments/assets/c5fbb6ea-f935-4743-8f5f-31a2a37e4200)
 
   
 
