@@ -199,6 +199,6 @@ This is a writeup of a practical project that involves deploying a PHP web appli
 
 
 
-- To prevent unwanted billing charges, return to Lightsail instances dashboard and stop and delete the specified instance
+- To prevent unwanted billing charges, return to Lightsail instances dashboard and stop and delete the specified instance <br> 
   ![image](https://github.com/user-attachments/assets/47ff587b-96d6-4c6c-857a-a2c07e8855fc)
 
