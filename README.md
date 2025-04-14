@@ -7,6 +7,9 @@ This is a writeup of a practical project that involves deploying a PHP web appli
 5. [Secure Site with SSL](https://github.com/aaronamran/AWS-Lightsail-LAMP-Stack-Web-App-Deployment/tree/main#secure-site-with-ssl)
 6. [Test Deployed Web Application](https://github.com/aaronamran/AWS-Lightsail-LAMP-Stack-Web-App-Deployment/tree/main#test-deployed-web-application)
 
+![aws_lightsail_lamp_stack](https://github.com/user-attachments/assets/a9dd67ce-439d-4c7b-851f-9ec8c8d8973b)
+
+
 
 ## Create and Configure AWS Lightsail Instance
 - In AWS, create a free tier account and complete the identity verification and billing information
