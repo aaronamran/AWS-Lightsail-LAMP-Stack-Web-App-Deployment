@@ -1,13 +1,15 @@
 # AWS Lightsail LAMP Stack Web Application Deployment
 This is a writeup of a practical project that involves deploying a PHP web application with CRUD functionality onto an AWS Lightsail instance and configuring it to have a static public IP address with domain name and SSL certificate
+
+![aws_lightsail_lamp_stack](https://github.com/user-attachments/assets/d1064491-9b1e-4441-b576-e260dec09bff)
+
+
 1. [Create and Configure AWS Lightsail Instance](https://github.com/aaronamran/AWS-Lightsail-LAMP-Stack-Web-App-Deployment/tree/main#create-and-configure-aws-lightsail-instance)
 2. [Allocate a Static IP Address](https://github.com/aaronamran/AWS-Lightsail-LAMP-Stack-Web-App-Deployment/tree/main#allocate-a-static-ip-address)
 3. [Connect to Lightsail Instance via SSH](https://github.com/aaronamran/AWS-Lightsail-LAMP-Stack-Web-App-Deployment/tree/main#connect-to-lightsail-instance-via-ssh)
 4. [Configure Apache Virtual Host for a Custom Domain](https://github.com/aaronamran/AWS-Lightsail-LAMP-Stack-Web-App-Deployment/tree/main#configure-apache-virtual-host-for-a-custom-domain)
 5. [Secure Site with SSL](https://github.com/aaronamran/AWS-Lightsail-LAMP-Stack-Web-App-Deployment/tree/main#secure-site-with-ssl)
 6. [Test Deployed Web Application](https://github.com/aaronamran/AWS-Lightsail-LAMP-Stack-Web-App-Deployment/tree/main#test-deployed-web-application)
-
-![aws_lightsail_lamp_stack](https://github.com/user-attachments/assets/a9dd67ce-439d-4c7b-851f-9ec8c8d8973b)
 
 
 
